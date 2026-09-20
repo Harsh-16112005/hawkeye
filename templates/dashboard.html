@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<section class="dash-scroll">
+  <div class="dash-grid">
+    <section class="dash-card">
+      <header class="dash-card-head">Time Spent Per File</header>
+      <div class="dash-card-body" id="dash-time-per-file"></div>
+    </section>
+
+    <section class="dash-card">
+      <header class="dash-card-head">Active vs Idle Hours</header>
+      <div class="dash-card-body" id="dash-active-idle"></div>
+    </section>
+
+    <section class="dash-card">
+      <header class="dash-card-head">Weekly Analysis</header>
+      <div class="dash-card-body" id="dash-weekly"></div>
+    </section>
+
+    <section class="dash-card">
+      <header class="dash-card-head">Operations Breakdown</header>
+      <div class="dash-card-body" id="dash-operations"></div>
+    </section>
+
+    <section class="dash-card">
+      <header class="dash-card-head">File Type Breakdown</header>
+      <div class="dash-card-body" id="dash-file-types"></div>
+    </section>
+
+    <section class="dash-card">
+      <header class="dash-card-head">Net Files Over Time</header>
+      <div class="dash-card-body" id="dash-net-files"></div>
+    </section>
+
+    <section class="dash-card wide">
+      <header class="dash-card-head"><i class="fa-solid fa-triangle-exclamation"></i> Abandoned Files This Week</header>
+      <div class="dash-card-body" id="dash-abandoned"></div>
+    </section>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HawkEye - {% block title %}Offline File Versioning System{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header id="site-header">
+    <h1 class="brand">
+      <i class="fa-solid fa-crow brand-logo"></i>
+      <span class="brand-name">HawkEye</span>
+    </h1>
+    <p class="tagline">OFFLINE FILE VERSIONING SYSTEM</p>
+
+    <nav id="main-nav">
+      <a href="{{ url_for('index') }}" class="nav-tab {{ 'active' if active_page == 'home' else '' }}"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="{{ url_for('dashboard') }}" class="nav-tab {{ 'active' if active_page == 'dashboard' else '' }}"><i class="fa-solid fa-table-cells"></i> Dashboard</a>
+      <a href="{{ url_for('timeline') }}" class="nav-tab {{ 'active' if active_page == 'timeline' else '' }}"><i class="fa-solid fa-clock-rotate-left"></i> Timeline</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

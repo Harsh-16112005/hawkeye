@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="workspace-grid">
+  <section class="pane" id="explorer-pane">
+    <header class="pane-head explorer-head">
+      <span id="explorer-title">Folders</span>
+      <button id="btn-add-ws" class="icon-btn" title="Add folder"><i class="fa-solid fa-folder-plus"></i></button>
+    </header>
+    <div class="pane-body" id="explorer-body"></div>
+  </section>
+
+  <section class="pane" id="changes-pane">
+    <header class="pane-head changes-head">
+      <div class="changes-title-row">
+        <div class="title-block">
+          <div class="changes-file" id="changes-file">No file selected</div>
+          <div class="changes-meta" id="changes-meta"></div>
+        </div>
+        <div class="diff-legend" id="diff-legend" hidden>
+          <span class="lg chg">~ changed</span>
+          <span class="lg add">+ added</span>
+          <span class="lg del">- removed</span>
+        </div>
+        <button class="restore-btn" id="btn-restore" hidden>
+          <i class="fa-solid fa-rotate-left"></i> Restore
+        </button>
+      </div>
+    </header>
+    <div class="pane-body" id="changes-body"></div>
+  </section>
+
+  <section class="pane" id="versions-pane">
+    <header class="pane-head">
+      <i class="fa-solid fa-layer-group"></i> Old Versions
+      <span class="versions-head-count" id="versions-count"></span>
+    </header>
+    <div class="pane-body" id="versions-body"></div>
+  </section>
+</section>
+
+<div class="modal-overlay" id="restore-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="restore-modal-title">
+    <div class="modal-head">
+      <span id="restore-modal-title">Restore a version</span>
+      <button class="modal-x" id="restore-modal-close" title="Close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body" id="restore-modal-body"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}
